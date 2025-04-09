@@ -1,0 +1,116 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter pub get
+
+## exception
+
+FileSystemException: FileSystemException: Failed to decode data using encoding 'utf-8', path = 'C:\ClawLite\android\gradle.properties'
+
+```
+#0      _File._tryDecode (dart:io/file_impl.dart:707:7)
+#1      _File.readAsStringSync (dart:io/file_impl.dart:718:7)
+#2      ForwardingFile.readAsStringSync (package:file/src/forwarding/forwarding_file.dart:99:16)
+#3      ErrorHandlingFile.readAsStringSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:212:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:550:14)
+#5      ErrorHandlingFile.readAsStringSync (package:flutter_tools/src/base/error_handling_io.dart:211:12)
+#6      isAppUsingAndroidX (package:flutter_tools/src/android/gradle.dart:999:21)
+#7      _writeAndroidPluginRegistrant (package:flutter_tools/src/flutter_plugins.dart:387:17)
+#8      injectPlugins (package:flutter_tools/src/flutter_plugins.dart:1235:11)
+<asynchronous suspension>
+#9      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:387:5)
+<asynchronous suspension>
+#10     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:388:7)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1558:27)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#17     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:98:11)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#19     main (package:flutter_tools/executable.dart:99:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.29.2, on Microsoft Windows [版本 10.0.26100.3624], locale zh-CN) [2.2s]
+    [32m•[39m Flutter version 3.29.2 on channel stable at C:\futter\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision c236373904 (4 weeks ago), 2025-03-13 16:17:06 -0400
+    [32m•[39m Engine revision 18b71d647a
+    [32m•[39m Dart version 3.7.2
+    [32m•[39m DevTools version 2.42.3
+
+[32m[✓][39m Windows Version (11 专业版 64-bit, 24H2, 2009) [4.4s]
+
+[32m[✓][39m Android toolchain - develop for Android devices (Android SDK version 35.0.1) [25.9s]
+    [32m•[39m Android SDK at C:\Android\android-sdk
+    [32m•[39m Platform android-35, build-tools 35.0.1
+    [32m•[39m ANDROID_HOME = C:\Android\android-sdk
+    [32m•[39m Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
+      This is the JDK bundled with the latest Android Studio installation on this machine.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.5+-13047016-b750.29)
+    [32m•[39m All Android licenses accepted.
+
+[31m[✗][39m Chrome - develop for the web (Cannot find Chrome executable at C:\Program Files
+    (x86)\Google\Chrome\chrome.exe) [951ms]
+    [33m![39m C:\Program Files (x86)\Google\Chrome\chrome.exe is not executable.
+
+[33m[!][39m Visual Studio - develop Windows apps (Visual Studio Community 2022 17.13.2) [950ms]
+    [32m•[39m Visual Studio at D:\vs
+    [32m•[39m Visual Studio Community 2022 version 17.13.35825.156
+    [32m•[39m Windows 10 SDK version 10.0.22621.0
+    [31m✗[39m Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the
+      "Desktop development with C++" workload, and include these components:
+        MSVC v142 - VS 2019 C++ x64/x86 build tools
+         - If there are multiple build tool versions available, install the latest
+        C++ CMake tools for Windows
+        Windows 10 SDK
+
+[32m[✓][39m Android Studio (version 2024.3) [139ms]
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.5+-13047016-b750.29)
+
+[32m[✓][39m IntelliJ IDEA Community Edition (version 2024.1) [135ms]
+    [32m•[39m IntelliJ at D:\javajdk\IntelliJ IDEA Community Edition 2024.1.2
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[32m[✓][39m IntelliJ IDEA Community Edition (version 2024.2) [134ms]
+    [32m•[39m IntelliJ at E:\java\IntelliJ IDEA Community Edition 2024.2.3
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[32m[✓][39m Connected device (2 available) [345ms]
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows [版本 10.0.26100.3624]
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge 135.0.3179.54
+
+[33m[!][39m Network resources [21.2s]
+    [31m✗[39m A network error occurred while checking "https://github.com/": 信号灯超时时间已到
+
+
+[33m![39m Doctor found issues in 3 categories.
+```
